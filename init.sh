@@ -1,4 +1,17 @@
 #!/bin/bash
+
+while getopts "p:" opt; do
+  case $opt in
+    p)
+      profile_path="$OPTARG"
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+done
+export profile_path
+
 xhost +SI:localuser:root
 dpkg --add-architecture i386
 apt update

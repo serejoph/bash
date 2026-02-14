@@ -1,17 +1,6 @@
 #!/bin/sh
 ARCHIVE_OFFSET=961
 
-while getopts "p:" opt; do
-  case $opt in
-    p)
-      profile_path="$OPTARG"
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      ;;
-  esac
-done
-
 #-------------------------------------------------
 #  Common variables
 #-------------------------------------------------
@@ -605,6 +594,7 @@ then
 	if [ ${res} != 0 ]
 	then
 		echo "Please add \"root\" and \"$USER_NAME\" to X11 access list"
+		echo "Execute: xhost +SI:localuser:root"
 		exit 1
 	fi
 fi
