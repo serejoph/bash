@@ -64,9 +64,11 @@ KillCShell(){
 }
 
 IsFFStarted(){
-   PID=`ps ax | grep -v grep | grep -i "firefox" | awk '{print $1}'`
 
-   if [ -z "$PID" ]
+       PROCESSO=`ps ax | grep -v grep  | awk '{split($5,a," "); print a[1]}' | grep -i firefox`
+       #PID=`ps ax | grep -v grep | grep -i "firefox" | awk '{print $1}'`
+
+   if [ -z "$PROCESSO" ]
       then
           echo 0
       else
