@@ -11,4 +11,4 @@ libstdc++5:i386 \
 openjdk-8-jre-headless \
 ./libstdc++5_3.3.6-30ubuntu2_i386.deb
 bash ./snx_install_linux30.sh
-bash ./instalador.sh
+bash ./vpn.sh
